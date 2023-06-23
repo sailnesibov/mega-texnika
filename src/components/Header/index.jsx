@@ -1,9 +1,29 @@
-import { Box, Button, Container, Stack, Typography } from "@mui/material";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import MegaTexnikaLogo from "../../assets/logo.png";
 import Navlink from "../Navlink";
+import "./index.css"
+const texnikalarLinks=[
+
+    {id:0,
+        to:'/texnikalar/ekskavator',
+        title:'Ekskavator',
+    },
+     { id:1,
+        to:'/texnikalar/yukleyici',
+        title:'Yukleyici',
+    },
+    { id:2,
+        to:'/texnikalar/avtokran',
+        title:'Avtokran',
+    },
+    { id:1,
+        to:'/texnikalar/fortlift',
+        title:'Fortlift',
+    },
+]
 
 const Header = () => {
     return (
@@ -27,18 +47,20 @@ const Header = () => {
                     <Stack flexDirection="row" gap={2}>
                         <Navlink to="/" title="Əsas səhifə" />
                         <Navlink to="haqqimizda" title="Haqqimizda" />
-                        <Navlink to="texnikalar" title="Texnikalar" />
+                        <Navlink to="texnikalar" title="Texnikalar"  links={texnikalarLinks}/>
                         <Navlink to="icaresertleri" title="İcarə şərtləri" />
                         <Navlink to="blog" title="Blog" />
                         <Navlink to="elaqe" title="Əlaqə" />
                     </Stack>
                     <Stack flexDirection="row" gap={2}>
-                        <Typography>Az</Typography>
-                        <Typography>Ru</Typography>
-                        <Typography>En</Typography>
+                        <Navlink to="az" title="Az"/>
+                        <Navlink to="ru" title="Ru"/>
+                        <Navlink to="en" title="En"/>
                     </Stack>
+                    
                 </Stack >
             </Container>
+           
         </>
     )
 }
