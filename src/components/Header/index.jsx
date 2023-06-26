@@ -5,6 +5,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import MegaTexnikaLogo from "../../assets/logo.png";
 import Navlink from "../Navlink";
 import "./index.css"
+import BurgerMenu from "../BurgerMenu";
 const texnikalarLinks=[
 
     {id:0,
@@ -44,7 +45,7 @@ const Header = () => {
 
                 <Stack flexDirection="row" alignItems="center" gap={2} justifyContent="space-between">
                     <img src={MegaTexnikaLogo} />
-                    <Stack flexDirection="row" gap={2}>
+                    <Stack sx={{display:{xs:'none',md:'flex'}}} flexDirection="row" gap={2}>
                         <Navlink to="/" title="Əsas səhifə" />
                         <Navlink to="haqqimizda" title="Haqqimizda" />
                         <Navlink to="texnikalar" title="Texnikalar"  links={texnikalarLinks}/>
@@ -52,15 +53,17 @@ const Header = () => {
                         <Navlink to="blog" title="Blog" />
                         <Navlink to="elaqe" title="Əlaqə" />
                     </Stack>
-                    <Stack flexDirection="row" gap={2}>
+                    <Stack sx={{display:{xs:'none',md:'flex'}}} flexDirection="row" gap={2}>
                         <Navlink to="az" title="Az"/>
                         <Navlink to="ru" title="Ru"/>
                         <Navlink to="en" title="En"/>
                     </Stack>
-                    
+                <BurgerMenu/>
                 </Stack >
             </Container>
-           
+           <Box>
+            <Typography alignItems="center"><h1>megaTexnika</h1></Typography>
+           </Box>
         </>
     )
 }
